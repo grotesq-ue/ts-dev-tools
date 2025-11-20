@@ -1,8 +1,8 @@
-import info from "../../package.json";
+import { name } from "../../package.json";
 
 import { DEP_ICONS, ICONS } from "./icons";
 
-export const TITLE = ["\n", info.name, "\n"].join("");
+export const TITLE = ["\n", name, "\n"].join("");
 
 const NOTICE_TEXT = "A git repository will be initiated and the following dependencies will be installed:";
 

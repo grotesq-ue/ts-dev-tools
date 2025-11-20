@@ -1,7 +1,28 @@
 {
   "name": "@grotesq-ue/ts-dev-tools",
-  "module": "index.ts",
+  "description": "A simple CLI application for scaffolding grotesq-ue preferred TypeScript Development Tools.",
+  "author": {
+    "name": "Ulyses Edcel C. Adrales",
+    "email": "ulysesadrales@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grotesq-ue/ts-dev-tools.git"
+  },
+  "keywords": [
+    "cli",
+    "typescript",
+    "development tools",
+    "oxlint",
+    "dprint",
+    "lefthook"
+  ],
+  "license": "MIT",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "bin": "./dist/index.js",
   "devDependencies": {
     "@types/bun": "latest",
     "@types/js-yaml": "^4.0.9",

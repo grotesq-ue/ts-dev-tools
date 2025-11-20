@@ -5,3 +5,4 @@ pre-commit:
       stage_fixed: true
     - run: bun x dprint fmt {staged_files}
       stage_fixed: true
+    - run: bun test

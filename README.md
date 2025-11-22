@@ -16,3 +16,33 @@ A simple CLI application for scaffolding grotesq-ue preferred TypeScript Develop
 - Dependencies:
   - [package-manager-detector](https://github.com/antfu-collective/package-manager-detector)
   - [js-yaml](https://github.com/nodeca/js-yaml)
+
+## Usage
+
+### npm
+
+```
+npx @grotesq-ue/ts-dev-tools
+```
+
+### pnpm
+
+```
+pnpm dlx @grotesq-ue/ts-dev-tools
+```
+
+### yarn
+
+```
+yarn dlx @grotesq-ue/ts-dev-tools
+```
+
+### bun
+
+```
+bunx @grotesq-ue/ts-dev-tools
+```
+
+## License
+
+[MIT](https://github.com/grotesq-ue/ts-dev-tools/blob/master/LICENSE.md)

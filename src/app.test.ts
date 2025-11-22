@@ -7,7 +7,7 @@ describe("app", () => {
 
   test("immediately returns exit code 0 if permission is denied", async () => {
     const permit = spyOn(scripts, "permit");
-    permit.mockImplementationOnce(() => false);
+    permit.mockImplementationOnce(async () => false);
     const code = await app();
     expect(code).toBe(0);
   });
@@ -18,7 +18,7 @@ describe("app", () => {
     const install = spyOn(scripts, "install");
     const setup = spyOn(scripts, "setup");
     const hook = spyOn(scripts, "hook");
-    permit.mockImplementationOnce(() => true);
+    permit.mockImplementationOnce(async () => true);
     git.mockImplementationOnce(async () => ({ stdout: "", stderr: "" }));
     install.mockImplementationOnce(async () => []);
     const code = await app();

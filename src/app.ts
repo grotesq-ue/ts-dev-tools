@@ -3,7 +3,7 @@ import { hook, init, install, permit, setup } from "./scripts";
 
 export const app = async () => {
   console.log(TITLE);
-  const permitted = permit();
+  const permitted = await permit();
   if (!permitted) return 0;
   const reposited = await init.git();
   const installed = await install();

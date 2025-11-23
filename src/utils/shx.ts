@@ -1,19 +1,12 @@
-import { spawn } from "node:child_process";
+import { spawnSync } from "node:child_process";
 
 export type ShellExecuted = { stdout: string; stderr: string };
 
-export const shx = async (command: string): Promise<ShellExecuted> =>
-  new Promise((resolve) => {
-    const [executable = "", ...args] = command.split(" ");
-    const spawned = spawn(executable, [...args], { stdio: "inherit" });
-    spawned.on("error", (error) =>
-      resolve({
-        stdout: "",
-        stderr: `Command failed: ${error.message}`,
-      }));
-    spawned.on("close", (code) =>
-      resolve({
-        stdout: code ? "" : `Command executed: ${command}`,
-        stderr: code ? `Command failed: ${command}` : "",
-      }));
-  });
+export const shx = (command: string): ShellExecuted => {
+  const [executable = "", ...args] = command.split(" ");
+  const spawned = spawnSync(executable, [...args], { stdio: "inherit" });
+  return {
+    stdout: spawned.stdout ? spawned.stdout.toString() : "",
+    stderr: spawned.stderr ? spawned.stderr.toString() : "",
+  };
+};

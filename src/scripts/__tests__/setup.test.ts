@@ -11,7 +11,7 @@ describe("setup", () => {
   afterEach(() => mock.clearAllMocks());
 
   test("displays initialization output of git repository", async () => {
-    shx.mockImplementationOnce(async () => ({ stdout: "SUCCESS", stderr: "" }));
+    shx.mockImplementationOnce(() => ({ stdout: "SUCCESS", stderr: "" }));
     const { stdout, stderr } = await init.git();
     expect(stdout.length).toBeTruthy();
     expect(stderr.length).toBeFalsy();
@@ -19,7 +19,7 @@ describe("setup", () => {
   });
 
   test("displays initialization error of git repository", async () => {
-    shx.mockImplementationOnce(async () => ({ stdout: "", stderr: "FAILED" }));
+    shx.mockImplementationOnce(() => ({ stdout: "", stderr: "FAILED" }));
     const { stdout, stderr } = await init.git();
     expect(stderr.length).toBeTruthy();
     expect(stdout.length).toBeFalsy();

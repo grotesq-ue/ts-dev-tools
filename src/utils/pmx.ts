@@ -10,6 +10,6 @@ export const UNSUPPORTED: ShellExecuted = {
 export const pmx = async (command: Command, ...args: string[]) => {
   const instruction = await pmd(command, ...args);
   if (!instruction) return UNSUPPORTED;
-  const execution = await shx(instruction);
+  const execution = shx(instruction);
   return execution;
 };

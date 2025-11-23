@@ -7,9 +7,9 @@ const lefthook = async () => await pmx("execute", "lefthook", "install");
 
 const oxlint = async () => await pmx("execute", "oxlint", "--init");
 
-const git = async () => {
+const git = () => {
   console.info(GIT_INIT_TEXT.get("START"));
-  const execution = await shx("git init");
+  const execution = shx("git init");
   const result = GIT_INIT_TEXT.get(execution.stderr.length ? "FAIL" : "SUCCESS");
   const display = execution.stderr.length ? console.error : console.info;
   display(result);

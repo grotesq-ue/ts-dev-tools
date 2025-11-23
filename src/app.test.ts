@@ -19,7 +19,7 @@ describe("app", () => {
     const setup = spyOn(scripts, "setup");
     const hook = spyOn(scripts, "hook");
     permit.mockImplementationOnce(async () => true);
-    git.mockImplementationOnce(async () => ({ stdout: "", stderr: "" }));
+    git.mockImplementationOnce(() => ({ stdout: "", stderr: "" }));
     install.mockImplementationOnce(async () => []);
     const code = await app();
     expect(setup).not.toBeCalled();

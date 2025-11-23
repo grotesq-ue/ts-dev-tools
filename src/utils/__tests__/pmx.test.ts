@@ -13,7 +13,7 @@ describe("pmx", () => {
     const pmd = spyOn(PMD, "pmd");
     const shx = spyOn(SHX, "shx");
     pmd.mockImplementationOnce(async () => COMMAND);
-    shx.mockImplementationOnce(async () => ({ stdout: "", stderr: "" }));
+    shx.mockImplementationOnce(() => ({ stdout: "", stderr: "" }));
     const execution = await pmx(...PARAMS);
     expect(pmd).toBeCalledWith(...PARAMS);
     expect(shx).toBeCalledWith(COMMAND);

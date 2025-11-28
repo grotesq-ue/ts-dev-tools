@@ -40,5 +40,5 @@
     "js-yaml": "^4.1.0",
     "package-manager-detector": "^1.5.0"
   },
-  "version": "1.0.5"
+  "version": "1.0.6"
 }

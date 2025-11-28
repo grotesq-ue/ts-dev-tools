@@ -6,7 +6,7 @@ import { init } from "./setup";
 
 export const hook = async (deps: Dep[]) => {
   console.info(GIT_HOOK_TEXT.get("START"));
-  const tsc = { run: await pmd("execute", "tsc") };
+  const tsc = { run: await pmd("execute-local", "tsc") };
   const checkers = await Promise.all(
     JOBS.entries().filter(([key]) => deps.includes(key)).map(async ([_, value]) => ({
       ...value,

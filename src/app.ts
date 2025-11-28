@@ -7,7 +7,9 @@ export const app = async () => {
   if (!permitted) return 0;
   const reposited = init.git();
   const installed = await install();
-  if (installed.length) await setup(installed);
-  if (installed.length && !reposited.stderr.length) await hook(installed);
+  if (!installed.length) return 0;
+  await setup(installed);
+  if (reposited.stderr.length) return 0;
+  await hook(installed);
   return 0;
 };

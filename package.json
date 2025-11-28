@@ -30,7 +30,7 @@
     "bunup": "^0.15.14",
     "dprint": "^0.50.2",
     "lefthook": "^2.0.4",
-    "oxlint": "^1.29.0"
+    "oxlint": "^1.30.0"
   },
   "peerDependencies": {
     "typescript": "^5"

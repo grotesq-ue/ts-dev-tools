@@ -10,7 +10,7 @@ export const hook = async (deps: Dep[]) => {
   const checkers = await Promise.all(
     JOBS.entries().filter(([key]) => deps.includes(key)).map(async ([_, value]) => ({
       ...value,
-      run: await pmd("execute", value.run),
+      run: await pmd("execute-local", value.run),
     })).toArray(),
   );
   const commands = { "pre-commit": { jobs: [tsc, ...checkers] } };

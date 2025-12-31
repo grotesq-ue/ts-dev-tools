@@ -14,6 +14,7 @@ A simple CLI application for scaffolding grotesq-ue preferred TypeScript Develop
 - Environment: [Bun](https://bun.com/)
 - Build Tool: [Bunup](https://bunup.dev/)
 - Dependencies:
+  - [cross-spawn](https://github.com/moxystudio/node-cross-spawn)
   - [package-manager-detector](https://github.com/antfu-collective/package-manager-detector)
   - [js-yaml](https://github.com/nodeca/js-yaml)
 

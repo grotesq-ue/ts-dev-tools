@@ -1,6 +1,6 @@
 pre-commit:
   jobs:
-    - run: bun x tsc
+    - run: bun x tsc --noEmit
     - run: bun x oxlint --fix {staged_files}
       stage_fixed: true
     - run: bun x dprint fmt {staged_files}

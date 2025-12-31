@@ -6,14 +6,14 @@ import { init } from "./setup";
 
 export const hook = async (deps: Dep[]) => {
   console.info(GIT_HOOK_TEXT.get("START"));
-  const tsc = { run: await pmd("execute-local", "tsc") };
+  const type_check = { run: await pmd("execute-local", "tsc", "--noEmit") };
   const checkers = await Promise.all(
     JOBS.entries().filter(([key]) => deps.includes(key)).map(async ([_, value]) => ({
       ...value,
       run: await pmd("execute-local", value.run),
     })).toArray(),
   );
-  const commands = { "pre-commit": { jobs: [tsc, ...checkers] } };
+  const commands = { "pre-commit": { jobs: [type_check, ...checkers] } };
   const raw = yaml.dump(commands);
   try {
     await writeFile(LEFTHOOK_CONFIG_PATH, raw);

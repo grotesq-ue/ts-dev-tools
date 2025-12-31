@@ -28,9 +28,9 @@
     "@types/cross-spawn": "^6.0.6",
     "@types/js-yaml": "^4.0.9",
     "bunup": "^0.15.14",
-    "dprint": "^0.50.2",
-    "lefthook": "^2.0.8",
-    "oxlint": "^1.31.0"
+    "dprint": "^0.51.1",
+    "lefthook": "^2.0.13",
+    "oxlint": "^1.36.0"
   },
   "peerDependencies": {
     "typescript": "^5"
